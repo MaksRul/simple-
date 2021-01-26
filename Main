@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" Enter integer number one ");
+        double numberOne = sc.nextDouble();
+        System.out.println("Enter integer number two");
+        double numberTwo = sc.nextDouble();
+        if (numberOne % 1 == 0 && numberTwo % 1 == 0) {
+            if(numberOne<numberTwo){
+                double number = numberOne;
+                numberOne = numberTwo;
+                numberTwo = number;
+            }
+            double result ;
+            do{
+                result = numberOne%numberTwo;
+                numberOne = numberTwo;
+                numberTwo = result;
+            }while(result != 0);
+            System.out.println("Greatest common divisor " + numberOne);
+        }else{
+            System.out.println(" We input an correct number " );
+        }
+    }
+}
